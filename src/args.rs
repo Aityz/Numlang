@@ -15,6 +15,8 @@ pub struct Args {
     pub help: bool,
     pub version: bool,
 
+    pub ignore: bool,
+
     pub brainfuck: bool, // without this, Numlang will interpret the file as numlang
 }
 
@@ -30,6 +32,7 @@ impl Args {
         let mut help = false;
         let mut version = false;
         let mut brainfuck = false;
+        let mut ignore = false;
 
         for arg in args {
             match arg.to_lowercase().as_str() {
@@ -41,6 +44,7 @@ impl Args {
                 "--help" | "-h" => help = true,
                 "--version" | "-v" => version = true,
                 "--brainfuck" | "-bf" | "-b" => brainfuck = true,
+                "--ignore" | "-" => ignore = true,
 
                 _ => file = arg,
             }
@@ -52,6 +56,7 @@ impl Args {
             help,
             version,
             brainfuck,
+            ignore,
         }
     }
 }

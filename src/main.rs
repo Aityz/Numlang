@@ -36,6 +36,7 @@ fn main() {
         println!("  --help, -h:            Show help");
         println!("  --version, -v:         Show version");
         println!("  --bf, -b, --brainfuck: Compile brainfuck instead of numlang\n");
+        println!("  --ignore, -i:          Ignore loops while using Hex");
         println!("Commands:");
         println!("  run                    Run Brainfuck/numlang code with the interpreter");
         println!("  compile                Compile Brainfuck/numlang to a binary");
@@ -108,6 +109,12 @@ fn main() {
 
                 for char in data.chars() {
                     file_data.push_str(format!("{:02x}", (char as u8)).as_str());
+                }
+
+                if args.ignore {
+                    file_data = file_data.replace('c', "");
+
+                    file_data = file_data.replace('d', "");
                 }
 
                 if std::fs::write(&filename, file_data).is_err() {

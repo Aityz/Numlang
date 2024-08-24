@@ -82,8 +82,6 @@ pub fn translate(f: String, brainfuck: bool) -> Result<(), std::io::Error> {
                 ']' => {
                     if loop_stack.pop().is_some() {
                         lines.push("\t}".to_string());
-                    } else {
-                        return Err(std::io::ErrorKind::Other.into());
                     }
                 }
 
@@ -148,8 +146,6 @@ pub fn translate(f: String, brainfuck: bool) -> Result<(), std::io::Error> {
                 'd' => {
                     if loop_stack.pop().is_some() {
                         lines.push("\t}".to_string());
-                    } else {
-                        return Err(std::io::ErrorKind::Other.into());
                     }
                 }
 
