@@ -132,7 +132,7 @@ pub fn translate(f: String, brainfuck: bool) -> Result<(), std::io::Error> {
                 }
 
                 'b' => {
-                    lines.push("\twrite_len(&mut stack, &ptr, &mut user_stack".to_string());
+                    lines.push("\twrite_len(&mut stack, &ptr, &mut user_stack);".to_string());
                 }
 
                 'c' => {
