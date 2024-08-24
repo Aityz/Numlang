@@ -3,4 +3,7 @@ name = "numlang"
 version = "0.1.0"
 edition = "2021"
 
+description = "A compiler for an esolang that uses hexadecimal"
+license = "MIT"
+
 [dependencies]
