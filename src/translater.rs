@@ -120,7 +120,7 @@ pub fn translate(f: String, brainfuck: bool) -> Result<(), std::io::Error> {
                 }
 
                 '8' => {
-                    lines.push("\tappend_to_us(&mut stack, &ptr, &mut us);".to_string());
+                    lines.push("\tappend_to_us(&mut stack, &ptr, &mut user_stack);".to_string());
                 }
 
                 '9' => {
